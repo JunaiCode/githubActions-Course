@@ -11,25 +11,17 @@ on:
   schedule:
     - cron: '0 17 24 * *'
 jobs:
-  checkout:
+  setup_Enviroment:
     name: Checkout
     runs-on: ubuntu-latest
     steps:
       - name: Chekout
         uses: actions/checkout@v4.1.2
-  node_environment:
-    name: Setup Node.js environment
-    runs-on: ubuntu-latest
-    
-    steps:
+        
       - name: enviroment_nodeJs 
         uses: actions/setup-node@v4.0.2
         with:
           check-latest: true
-  run_application:
-    name: Run Application
-    runs-on: ubuntu-latest
-    steps:
       - name: Hello Worl App
         run: node main.js
    
