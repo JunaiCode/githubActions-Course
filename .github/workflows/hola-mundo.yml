@@ -5,12 +5,14 @@ jobs:
     name: Setup Node.js environment
     runs-on: ubuntu-latest
     steps:
+    # Clona todo al runner
+      - name: Checkout
+        uses: actions/checkout@v3
       #Instala node en la maquina que le indica cada vez que hacen un push
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.2
-      # Clona todo al runner
-      - name: Checkout
-        uses: actions/checkout@v3
+        with:
+          check-latest: true
       #Ejecuta el script
       - name: Run Hello World
         run: node main.js
