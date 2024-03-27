@@ -1,0 +1,9 @@
+name: Context
+on: push
+jobs:
+  context_job:
+    runs-on: ubuntu-latest
+    if: ${{github.ref=='refs/heads/main'}}
+    steps:
+      - name: deploy
+      - run: echo "Desplegando en la rama $GITHUB_REF"
