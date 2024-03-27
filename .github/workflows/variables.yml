@@ -1,0 +1,12 @@
+name: variables
+on: [push, pull_request]
+env:
+  PERSONA: "Juan Palta"
+jobs:
+  firstJob:
+   env:
+     SALUDO: "Hola parcero mi nombre es,"
+   runs-on: ubuntu-latest
+   steps:
+    - name: Imprimir saludo 
+      run: echo "${{env.SALUDO}} ${{env.PERSONA}}"
