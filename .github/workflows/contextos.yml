@@ -6,4 +6,4 @@ jobs:
     if: ${{github.ref=='refs/heads/main'}}
     steps:
       - name: deploy
-      - run: echo "Desplegando en la rama $GITHUB_REF"
+        run: echo "Desplegando en la rama $GITHUB_REF"
